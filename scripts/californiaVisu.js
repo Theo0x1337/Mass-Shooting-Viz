@@ -71,7 +71,7 @@ d3.csv("californiaInfos.csv",
       }
       var mousemove = function(d) {
         Tooltip
-          .html("Year : "+d.date+" Fatalities : " + d.value)
+          .html("Year : "+d.date.getFullYear()+" Fatalities : " + d.value)
           .style("left", (d3.mouse(this)[0]+70) + "px")
           .style("top", (d3.mouse(this)[1]) + "px")
       }
