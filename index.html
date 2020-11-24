@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/d3.v4.js"></script>
+<style type="text/css">
+
+/* On mouse hover, lighten state color */
+path:hover {
+	fill-opacity: .7;
+}
+
+/* Style for Custom Tooltip */
+div.tooltip {   
+ 	position: absolute;           
+	text-align: center;           
+	width: 60px;                  
+	height: 60px;                 
+	padding: 2px;             
+	font: 12px sans-serif;        
+	background: white;   
+	border: 0px;      
+	border-radius: 8px;           
+	pointer-events: none;         
+}
+        
+/* Legend Font Style */
+body {
+	text-align: center;
+}
+        
+/* Legend Position Style */
+.legend {
+	position:absolute;
+	margin-left:'300px';
+}
+
+.map{
+	margin-top: 75px;
+}
+
+.bigTitle{
+	margin-top:50px;
+}
+
+.myCircle:hover {
+  stroke: black;
+}
+
+#my_dataviz{
+  margin-top: 100px;
+}
+
+h1{
+  margin-top: 50px;
+}
+
+#california{
+	margin-top: 200px;
+}
+
+#multipleState{
+	margin-top: 200px;
+}
+
+#my_dataviz2{
+	margin-top:50px;
+}
+
+</style>
+</head>
+<body>
+
+<div id="mapUs" class="bigTitle">
+	<h1>FATALITIES DUE TO MASS SHOOTING IN THE UNITED STATES</h1>
+</div>
+
+
+<div id="multipleState">
+	<h1>Evolution of deaths due to mass shooting by year and state between 1984 and 2020</h1>
+	<!-- Create a div where the graph will take place -->
+	<div id="my_dataviz2"></div>
+</div>
+
+
+<div id="california">
+	<h1>Number of people murdered by year during MASS SHOOTING in California between 1984 and 2019</h1>
+	<!-- Create a div where the graph will take place -->
+	<div id="my_dataviz"></div>
+</div>
+
+
+<div id="histo">
+	<h1>Cumulated deaths by state between 1984 and 2020</h1>
+	<!-- Create a div where the graph will take place -->
+	<div id="my_dataviz4"></div>
+</div>
+
+<script type="text/javascript" src="/scripts/mapVisu.js"></script>
+<script type="text/javascript" src="/scripts/multipleState.js"></script>
+<script type="text/javascript" src="/scripts/californiaVisu.js"></script>
+<script type="text/javascript" src="/scripts/histo.js"></script>
+</body>
+</html>
