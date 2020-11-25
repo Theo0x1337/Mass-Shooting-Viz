@@ -86,7 +86,24 @@ svg6.selectAll("path")
 	.append("path")
 	.attr("d", path6)
 	.style("stroke", "#fff")
-	.style("stroke-width", "1")
+    .style("stroke-width", "1")
+    // Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
+	// http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
+	.on("mouseover", function(d) {      
+    	div.transition()        
+      	   .duration(200)      
+           .style("opacity", .9);      
+           div.text(d.states + " fatalities : " + d.values)
+           .style("left", (d3.event.pageX) + "px")     
+           .style("top", (d3.event.pageY - 60) + "px");    
+	})   
+
+    // fade out tooltip on mouse out               
+    .on("mouseout", function(d) {       
+        div.transition()        
+           .duration(500)      
+           .style("opacity", 0);   
+    })
 	.style("fill", function(d) {
 
 	// Get data value
