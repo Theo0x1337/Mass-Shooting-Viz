@@ -31,7 +31,7 @@ var color = d3.scale.linear()
 var legendText = ["Fatalities >= 50", "50 > Fatalities >= 25", " 25 > Fatalities >= 1", "No fatalities"];
 
 //Create SVG element and append map to the SVG
-var svg = d3.select("#mapUs")
+var svg6 = d3.select("#mapUsHab")
 			.append("div").attr("class", "map")
 			.append("svg")
 			.attr("width", width)
@@ -55,7 +55,7 @@ d3.json("us-states.json", function(json) {
 for (var i = 0; i < data.length; i++) {
 
 	// Grab State Name
-	var dataState = data[i].state;
+	var dataState = data[i].states;
 
 	// Grab data value 
 	var dataValue = data[i].values;
@@ -78,7 +78,7 @@ for (var i = 0; i < data.length; i++) {
 }
 		
 // Bind the data to the SVG and create one path per GeoJSON feature
-svg.selectAll("path")
+svg6.selectAll("path")
 	.data(json.features)
 	.enter()
 	.append("path")
@@ -97,49 +97,10 @@ svg.selectAll("path")
 	//If value is undefined…
 	return "rgb(213,222,217)";
 	}
-});
-
-		 
-// Map the cities I have lived in!
-d3.csv("datasetv5.csv", function(data) {
-
-svg.selectAll("circle")
-	.data(data)
-	.enter()
-	.append("circle")
-	.attr("cx", function(d) {
-		return projection([d.longitude, d.latitude])[0];
-	})
-	.attr("cy", function(d) {
-		return projection([d.longitude, d.latitude])[1];
-	})
-	.attr("r", function(d) {
-		return Math.sqrt(d.fatalities) * 4;
-	})
-		.style("fill", "#073b4c")	
-		.style("opacity", 0.85)	
-
-	// Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
-	// http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
-	.on("mouseover", function(d) {      
-    	div.transition()        
-      	   .duration(200)      
-           .style("opacity", .9);      
-           div.text(d.location + " fatalities : " + d.fatalities)
-           .style("left", (d3.event.pageX) + "px")     
-           .style("top", (d3.event.pageY - 60) + "px");    
-	})   
-
-    // fade out tooltip on mouse out               
-    .on("mouseout", function(d) {       
-        div.transition()        
-           .duration(500)      
-           .style("opacity", 0);   
-    });
-});  
+}); 
         
 // Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
-var legend = d3.select("#mapUs").append("svg")
+var legend2 = d3.select("#mapUsHab").append("svg")
       			.attr("class", "legend")
      			.attr("width", 180)
     			.attr("height", 200)
@@ -149,12 +110,12 @@ var legend = d3.select("#mapUs").append("svg")
    				.append("g")
      			.attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
-  	legend.append("rect")
+  	legend2.append("rect")
    		  .attr("width", 18)
    		  .attr("height", 18)
    		  .style("fill", color);
 
-  	legend.append("text")
+  	legend2.append("text")
   		  .data(legendText)
       	  .attr("x", 24)
       	  .attr("y", 9)
