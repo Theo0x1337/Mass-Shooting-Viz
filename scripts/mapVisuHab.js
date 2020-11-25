@@ -60,6 +60,8 @@ for (var i = 0; i < data.length; i++) {
 	// Grab data value 
     var dataValue = data[i].indice;
 
+    var habValue = data[i].values
+
 	// Find the corresponding state inside the GeoJSON
 	for (var j = 0; j < json.features.length; j++)  {
 		var jsonState = json.features[j].properties.name;
@@ -68,8 +70,10 @@ for (var i = 0; i < data.length; i++) {
 
 		if (dataState == jsonState) {
 
-		// Copy the data value into the JSON
-		json.features[j].properties.values = dataValue; 
+        // Copy the data value into the JSON
+        json.features[j].properties.states = dataState;
+        json.features[j].properties.values = dataValue;
+        json.features[j].properties.hab = habValue; 
 
 		// Stop looking through the JSON
 		break;
@@ -92,8 +96,8 @@ svg6.selectAll("path")
 	.on("mouseover", function(d) {      
     	div.transition()        
       	   .duration(200)      
-           .style("opacity", .9);      
-           div.text(dataState+ " fatalities : " + dataValue)
+           .style("opacity", .9);
+           div.text("Inhabitants in "+d.properties.states+ " : " + d.properties.hab)
            .style("left", (d3.event.pageX) + "px")     
            .style("top", (d3.event.pageY - 60) + "px");    
 	})   
