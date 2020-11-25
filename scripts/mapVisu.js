@@ -150,7 +150,7 @@ var legend = d3.select("#mapUs").append("svg")
      			.attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
   	legend.append("rect")
-   		  .attr("width", 18)
+   		  .attr("width", 26)
    		  .attr("height", 18)
    		  .style("fill", color);
 

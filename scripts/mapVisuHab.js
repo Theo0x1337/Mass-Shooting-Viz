@@ -32,13 +32,13 @@ var legendText6 = ["Inhabitants < 50 000 000"," Inhabitants < 20 000 000", "Inha
 
 //Create SVG element and append map to the SVG
 var svg6 = d3.select("#mapUsHab")
-			.append("div").attr("class", "mapUsHab")
+			.append("div").attr("class", "mapUsHabOui")
 			.append("svg")
 			.attr("width", width)
 			.attr("height", height);
         
 // Append Div for tooltip to SVG
-var div = d3.select("#mapUsHab")
+var div6 = d3.select("#mapUsHab")
 		    .append("div")   
     		.attr("class", "tooltip2")               
             .style("opacity", 0);
