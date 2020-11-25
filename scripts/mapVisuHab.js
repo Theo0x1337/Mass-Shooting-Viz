@@ -26,9 +26,9 @@ var path6 = d3.geo.path()               // path generator that will convert GeoJ
 		
 // Define linear scale for output
 var color6 = d3.scale.linear()
-				.range(["rgb(213,222,217)","rgb(69,173,168)","rgb(217,91,67)","rgb(84,36,55)"]);
+				.range(["rgb(102,205,170)","rgb(69,173,168)","rgb(217,91,67)","rgb(84,36,55)"]);
 
-var legendText6 = ["Inhabitants < 50 000 000"," Inhabitants < 20 000 000", "Inhabitants < 5 000 000","Inhabitants < 1 000 000 "];
+var legendText6 = ["Inhabitants < 50 000 000"," Inhabitants < 30 000 000", "Inhabitants < 20 000 000","Inhabitants < 10 000 000 "];
 
 //Create SVG element and append map to the SVG
 var svg6 = d3.select("#mapUsHab")
@@ -134,8 +134,8 @@ var newLegend = d3.select("#mapUsHab").append("svg")
      			.attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
   	newLegend.append("rect")
-   		  .attr("width", 18)
-   		  .attr("height", 18)
+   		  .attr("width", 20)
+   		  .attr("height", 20)
    		  .style("fill", color6);
 
     newLegend.append("text")
