@@ -26,7 +26,7 @@ var path6 = d3.geo.path()               // path generator that will convert GeoJ
 		
 // Define linear scale for output
 var color6 = d3.scale.linear()
-				.range(["rgb(144,238,144)","rgb(69,173,168)","rgb(217,91,67)","rgb(84,36,55)"]);
+				.range(["rgb(204, 255, 255)","rgb(69,173,168)","rgb(217,91,67)","rgb(84,36,55)"]);
 
 var legendText6 = ["Inhabitants < 50 000 000"," Inhabitants < 20 000 000", "Inhabitants < 5 000 000","Inhabitants < 1 000 000 "];
 
