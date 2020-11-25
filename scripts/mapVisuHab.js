@@ -93,7 +93,7 @@ svg6.selectAll("path")
     	div.transition()        
       	   .duration(200)      
            .style("opacity", .9);      
-           div.text(d.states + " fatalities : " + d.values)
+           div.text(dataState+ " fatalities : " + dataValue)
            .style("left", (d3.event.pageX) + "px")     
            .style("top", (d3.event.pageY - 60) + "px");    
 	})   
