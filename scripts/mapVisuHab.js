@@ -125,7 +125,7 @@ svg6.selectAll("path")
 // Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
 var newLegend = d3.select("#mapUsHab").append("svg")
       			.attr("class", "newLegend")
-     			.attr("width", 180)
+     			.attr("width", 200)
     			.attr("height", 200)
    				.selectAll("g")
    				.data(color6.domain().slice().reverse())
@@ -140,7 +140,7 @@ var newLegend = d3.select("#mapUsHab").append("svg")
 
     newLegend.append("text")
   		  .data(legendText6)
-      	  .attr("x", 24)
+      	  .attr("x", 30)
       	  .attr("y", 9)
       	  .attr("dy", ".35em")
       	  .text(function(d) { return d; });
