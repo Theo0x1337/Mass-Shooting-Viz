@@ -15,20 +15,20 @@ var width = 960;
 var height = 500;
 
 // D3 Projection
-var projection = d3.geo.albersUsa()
+var projection6 = d3.geo.albersUsa()
 				   .translate([width/2, height/2])    // translate to center of screen
 				   .scale([1000]);          // scale things down so see entire US
         
 // Define path generator
-var path = d3.geo.path()               // path generator that will convert GeoJSON to SVG paths
-		  	 .projection(projection);  // tell path generator to use albersUsa projection
+var path6 = d3.geo.path()               // path generator that will convert GeoJSON to SVG paths
+		  	 .projection(projection6);  // tell path generator to use albersUsa projection
 
 		
 // Define linear scale for output
-var color = d3.scale.linear()
+var color6 = d3.scale.linear()
 				.range(["rgb(213,222,217)","rgb(69,173,168)","rgb(217,91,67)","rgb(84,36,55)"]);
 
-var legendText = ["Fatalities >= 50", "50 > Fatalities >= 25", " 25 > Fatalities >= 1", "No fatalities"];
+var legendText6 = ["Fatalities >= 50", "50 > Fatalities >= 25", " 25 > Fatalities >= 1", "No fatalities"];
 
 //Create SVG element and append map to the SVG
 var svg6 = d3.select("#mapUsHab")
@@ -38,15 +38,15 @@ var svg6 = d3.select("#mapUsHab")
 			.attr("height", height);
         
 // Append Div for tooltip to SVG
-var div = d3.select("#mapUs")
+var div6 = d3.select("#mapUs")
 		    .append("div")   
     		.attr("class", "tooltip")               
             .style("opacity", 0);
             
 
 // Load in my states data!
-d3.csv("fatalitiesByStates.csv", function(data) {
-color.domain([0,1,2,3]); // setting the range of the input data
+d3.csv("habitants.csv", function(data) {
+color6.domain([0,1,2,3]); // setting the range of the input data
 
 // Load GeoJSON data and merge with states data
 d3.json("us-states.json", function(json) {
@@ -82,17 +82,17 @@ svg6.selectAll("path")
 	.data(json.features)
 	.enter()
 	.append("path")
-	.attr("d", path)
+	.attr("d", path6)
 	.style("stroke", "#fff")
 	.style("stroke-width", "1")
 	.style("fill", function(d) {
 
 	// Get data value
-	var value = d.properties.values;
+	var value6 = d.properties.values;
 
-	if (value) {
+	if (value6) {
 	//If value exists…
-	return color(value);
+	return color(value6);
 	} else {
 	//If value is undefined…
 	return "rgb(213,222,217)";
@@ -105,7 +105,7 @@ var legend2 = d3.select("#mapUsHab").append("svg")
      			.attr("width", 180)
     			.attr("height", 200)
    				.selectAll("g")
-   				.data(color.domain().slice().reverse())
+   				.data(color6.domain().slice().reverse())
    				.enter()
    				.append("g")
      			.attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
@@ -113,10 +113,10 @@ var legend2 = d3.select("#mapUsHab").append("svg")
   	legend2.append("rect")
    		  .attr("width", 18)
    		  .attr("height", 18)
-   		  .style("fill", color);
+   		  .style("fill", color6);
 
   	legend2.append("text")
-  		  .data(legendText)
+  		  .data(legendText6)
       	  .attr("x", 24)
       	  .attr("y", 9)
       	  .attr("dy", ".35em")
