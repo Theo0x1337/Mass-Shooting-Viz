@@ -15,20 +15,20 @@ var width = 960;
 var height = 500;
 
 // D3 Projection
-var projection = d3.geo.albersUsa()
+var projection6 = d3.geo.albersUsa()
 				   .translate([width/2, height/2])    // translate to center of screen
 				   .scale([1000]);          // scale things down so see entire US
         
 // Define path generator
-var path = d3.geo.path()               // path generator that will convert GeoJSON to SVG paths
-		  	 .projection(projection);  // tell path generator to use albersUsa projection
+var path6 = d3.geo.path()               // path generator that will convert GeoJSON to SVG paths
+		  	 .projection(projection6);  // tell path generator to use albersUsa projection
 
 		
 // Define linear scale for output
 var color6 = d3.scale.linear()
-				.range(["rgb(213,222,217)","rgb(69,173,168)","rgb(217,91,67)","rgb(84,36,55)"]);
+				.range(["rgb(144,238,144)","rgb(69,173,168)","rgb(217,91,67)","rgb(84,36,55)"]);
 
-var legendText6 = ["Inhabitants < 1 000 000 ", "Inhabitants < 5 000 000", " Inhabitants < 20 000 000", "Inhabitants < 50 000 000"];
+var legendText6 = ["Inhabitants < 50 000 000"," Inhabitants < 20 000 000", "Inhabitants < 5 000 000","Inhabitants < 1 000 000 "];
 
 //Create SVG element and append map to the SVG
 var svg6 = d3.select("#mapUsHab")
@@ -46,7 +46,7 @@ var div = d3.select("#mapUsHab")
 
 // Load in my states data!
 d3.csv("habitants.csv", function(data) {
-color6.domain([1000000,5000000,2000000,50000000]); // setting the range of the input data
+color6.domain([1,2,3,4]); // setting the range of the input data
 
 // Load GeoJSON data and merge with states data
 d3.json("us-states.json", function(json) {
@@ -58,7 +58,7 @@ for (var i = 0; i < data.length; i++) {
 	var dataState = data[i].states;
 
 	// Grab data value 
-    var dataValue = data[i].values;
+    var dataValue = data[i].indice;
 
 	// Find the corresponding state inside the GeoJSON
 	for (var j = 0; j < json.features.length; j++)  {
@@ -84,7 +84,7 @@ svg6.selectAll("path")
 	.data(json.features)
 	.enter()
 	.append("path")
-	.attr("d", path)
+	.attr("d", path6)
 	.style("stroke", "#fff")
 	.style("stroke-width", "1")
 	.style("fill", function(d) {
@@ -102,8 +102,8 @@ svg6.selectAll("path")
 });
          
 // Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
-var legend = d3.select("#mapUsHab").append("svg")
-      			.attr("class", "legend2")
+var newLegend = d3.select("#mapUsHab").append("svg")
+      			.attr("class", "newLegend")
      			.attr("width", 180)
     			.attr("height", 200)
    				.selectAll("g")
@@ -112,13 +112,13 @@ var legend = d3.select("#mapUsHab").append("svg")
    				.append("g")
      			.attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
-  	legend.append("rect")
+  	newLegend.append("rect")
    		  .attr("width", 18)
    		  .attr("height", 18)
    		  .style("fill", color6);
 
-  	legend.append("text")
-  		  .data(legendText)
+    newLegend.append("text")
+  		  .data(legendText6)
       	  .attr("x", 24)
       	  .attr("y", 9)
       	  .attr("dy", ".35em")

@@ -1,54 +1,54 @@
-states,values
-California,39512223
-Texas,28995881
-Florida,21477737
-New York,19453561
-Pennsylvania,12801989
-Illinois,12671821
-Ohio,11689100
-Georgia,10617423
-North Carolina,10488084
-Michigan,9986857
-New Jersey,8882190
-Virginia,8535519
-Washington,7614893
-Arizona,7278717
-Massachusetts,6892503
-Tennessee,6829174
-Indiana,6732219
-Missouri,6137428
-Maryland,6045680
-Wisconsin,5822434
-Colorado,5758736
-Minnesota,5639632
-South Carolina,5148714
-Alabama,4903185
-Louisiana,4648794
-Kentucky,4467673
-Oregon,4217737
-Oklahoma,3956971
-Connecticut,3565287
-Utah,3205958
-Puerto Rico,3193694
-Iowa,3155070
-Nevada,3080156
-Arkansas,3017804
-Mississippi,2976149
-Kansas,2913314
-New Mexico,2096829
-Nebraska,1934408
-West Virginia,1792147
-Idaho,1787065
-Hawaii,1415872
-New Hampshire,1359711
-Maine,1344212
-Montana,1068778
-Rhode Island,1059361
-Delaware,973764
-South Dakota,884659
-North Dakota,762062
-Alaska,731545
-District of Columbia,705749
-Vermont,623989
-Wyoming,578759
-Guam,168485
+states,values,indice
+California,39512223,4
+Texas,28995881,3
+Florida,21477737,3
+New York,19453561,2
+Pennsylvania,12801989,2
+Illinois,12671821,2
+Ohio,11689100,2
+Georgia,10617423,2
+North Carolina,10488084,2
+Michigan,9986857,1
+New Jersey,8882190,1
+Virginia,8535519,1
+Washington,7614893,1
+Arizona,7278717,1
+Massachusetts,6892503,1
+Tennessee,6829174,1
+Indiana,6732219,1
+Missouri,6137428,1
+Maryland,6045680,1
+Wisconsin,5822434,1
+Colorado,5758736,1
+Minnesota,56396321,
+South Carolina,5148714,1
+Alabama,4903185,1
+Louisiana,4648794,1
+Kentucky,4467673,1
+Oregon,4217737,1
+Oklahoma,3956971,1
+Connecticut,3565287,1
+Utah,3205958,1
+Puerto Rico,3193694,1
+Iowa,3155070,1
+Nevada,3080156,1
+Arkansas,3017804,1
+Mississippi,2976149,1
+Kansas,2913314,1
+New Mexico,2096829,1
+Nebraska,1934408,1
+West Virginia,1792147,1
+Idaho,1787065,1
+Hawaii,1415872,1
+New Hampshire,1359711,1
+Maine,1344212,1
+Montana,1068778,1
+Rhode Island,1059361,1
+Delaware,973764,1
+South Dakota,884659,1
+North Dakota,762062,1
+Alaska,731545,1
+District of Columbia,705749,1
+Vermont,623989,1
+Wyoming,578759,1
+Guam,168485,1
